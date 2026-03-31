@@ -1,0 +1,46 @@
+GET http://localhost:3000/api/health
+
+###
+
+GET http://localhost:3000/api/polls
+
+###
+
+GET http://localhost:3000/api/polls/1
+
+###
+
+POST http://localhost:3000/api/polls
+Content-Type: application/json
+
+{
+	"title": "Qual framework você usa mais?",
+	"startAt": "2026-03-26T20:00:00",
+	"endAt": "2026-03-27T20:00:00",
+	"options": ["Fastify", "Express", "NestJS"]
+}
+
+###
+
+PUT http://localhost:3000/api/polls/1
+Content-Type: application/json
+
+{
+	"title": "Qual stack você prefere?",
+	"startAt": "2026-03-26T20:00:00",
+	"endAt": "2026-03-27T20:00:00",
+	"options": ["Node.js", "Laravel", "Python"]
+}
+
+###
+
+POST http://localhost:3000/api/polls/1/vote
+Content-Type: application/json
+
+{
+	"optionId": 1
+}
+
+###
+
+DELETE http://localhost:3000/api/polls/1
